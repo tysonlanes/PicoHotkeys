@@ -11,7 +11,6 @@ from adafruit_hid.keycode import Keycode
 from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
 from adafruit_hid.mouse import Mouse
 
-# setup the onboard LED
 led = DigitalInOut(board.LED)
 led.direction = Direction.OUTPUT
 led.value = False
@@ -77,7 +76,7 @@ while True:
                 for x in range(random.randint(0, 3)):
                     if not btn6.value:
                         break
-                    mse.move(50, 20, 0)
+                    mse.move(50, 0, 0)
                     if not btn6.value:
                         break
                     time.sleep(random.uniform(0.2, 1.2))
@@ -89,7 +88,7 @@ while True:
                     time.sleep(random.uniform(0.8, 1.6))
                     if not btn6.value:
                         break
-                    mse.move(-40, -10, 0)
+                    mse.move(0, -10, 0)
                     if not btn6.value:
                         break
                     mse.move(0, 0, random.randint(-18, -7))
@@ -98,19 +97,22 @@ while True:
                     time.sleep(random.uniform(0.6, 3.8))
                     if not btn6.value:
                         break
-                    mse.move(-10, -10, 0)
+                    mse.move(-50, 0, 0)
                     if not btn6.value:
                         break
                     time.sleep(random.uniform(2, 4.1))
                     if not btn6.value:
                         break
+                    mse.move(0, 10, 0)
                 mse.move(0, 0, random.randint(2, 7))
                 if not btn6.value:
                     led.value = False
                     break
                 time.sleep(random.uniform(0.2, 2.9))
             if not btn6.value:
+                
                 break
     else: # Button up status
         pass
     time.sleep(0.1)
+    
