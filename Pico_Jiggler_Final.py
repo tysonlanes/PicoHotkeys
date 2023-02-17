@@ -1,4 +1,7 @@
 # Uses circuitpython 8.0.0
+# Download Adafruit_CuircuitPython_HID-main.zip from:
+# https://github.com/tysonlanes/Pico_Stuff
+# and copy the adafruit_hid folder from inside to root of pico
 
 import time
 import board
